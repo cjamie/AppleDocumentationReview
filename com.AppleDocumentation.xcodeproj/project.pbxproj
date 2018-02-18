@@ -14,6 +14,7 @@
 		84718D022038B21F00FD082E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84718D012038B21F00FD082E /* Assets.xcassets */; };
 		84718D052038B21F00FD082E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84718D032038B21F00FD082E /* LaunchScreen.storyboard */; };
 		84718D102038B21F00FD082E /* com_AppleDocumentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84718D0F2038B21F00FD082E /* com_AppleDocumentationTests.swift */; };
+		84718D1B2038B2F500FD082E /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84718D1A2038B2F500FD082E /* Initialization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		84718D0B2038B21F00FD082E /* com.AppleDocumentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = com.AppleDocumentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84718D0F2038B21F00FD082E /* com_AppleDocumentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = com_AppleDocumentationTests.swift; sourceTree = "<group>"; };
 		84718D112038B21F00FD082E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84718D1A2038B2F500FD082E /* Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initialization.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				84718D032038B21F00FD082E /* LaunchScreen.storyboard */,
 				84718D062038B21F00FD082E /* Info.plist */,
 				84718CFE2038B21F00FD082E /* com_AppleDocumentation.xcdatamodeld */,
+				84718D1A2038B2F500FD082E /* Initialization.swift */,
 			);
 			path = com.AppleDocumentation;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				84718CFA2038B21F00FD082E /* ViewController.swift in Sources */,
 				84718CF82038B21F00FD082E /* AppDelegate.swift in Sources */,
 				84718D002038B21F00FD082E /* com_AppleDocumentation.xcdatamodeld in Sources */,
+				84718D1B2038B2F500FD082E /* Initialization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
