@@ -51,13 +51,31 @@ extension Initialization{
     
     func initDemo2(){
         //init may vary as long as it provides values for all stored non-optional properties
-        let magenta = Color(red: 1, green: 1, blue: 1)
-        let halfGray = Color(white: 0.5)
+        _ = Color(red: 1, green: 1, blue: 1) // magenta
+        _ = Color(white: 0.5) //halfgrey
+       
+        //Color has constants as its properties. It may be set during initialization but may not be modified afterwards
+    }
+    
+    
 
-        print("\(magenta) \(halfGray)")
+    func initDemo3(){
+        //if you want your custom value type to be initializable with default, memberwise, custom, then write your custom in an extension.
+
+        //WITHOUT EXTENSION (Size)
+        _ = Size(width: 1, height: 2)
+        //Initializer delegation- call other initializers to avoid duplicating code across multiple initializers
+        _ = Size(custom: 3.2)
+        _ = Size()
         
-        //Color has constants as its properties. It may be set during initialization but may not be modified afterwards.
-        
+        //WITH EXTENSION (Rect)
+        //another example of initializer delegation
+        let temp = Size(width: 1, height: 2)
+        _ = Rect(onlySize: temp)
+        _ = Rect()
+    }
+    
+    func initDemo4(){
         
     }
     

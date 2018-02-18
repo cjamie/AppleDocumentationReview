@@ -67,9 +67,31 @@ struct Color {
     }
 }
 
-
 struct Size {
     var width = 0.0, height = 0.0
+    
+    
+    init(){
+        self.width = 2.2
+        self.height = 2.1
+    }
+    init(width: Double, height: Double){
+        self.width = width
+        self.height = height
+    }
+    init(custom num: Double){
+        self.init(width: num, height: num/2)
+    }
+}
+
+struct Rect{
+    lazy var size: Size = Size(width: 0, height: 0)
+    var type: String = ""
+}
+extension Rect{
+    init(onlySize: Size){
+        self.init(size: onlySize, type: "custom")
+    }
 }
 
 
