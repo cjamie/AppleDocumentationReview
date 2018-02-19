@@ -136,11 +136,76 @@ class RecipeIngredient: Food {
     init(name: String, quantity: Int) {
         self.quantity = quantity
         super.init(name: name)
-//        self.name = "LOL"
+        
+        //NOTE: you MUST provide NEW properties with values before the super.init and MAY customize properties after the super.init
+//        self.quantity = 44
     }
     override convenience init(name: String) {
         self.init(name: name, quantity: 1)
     }
 }
 
+class ShoppingListItem: RecipeIngredient {
+    var purchased = false
+    var description: String {
+        var output = "\(quantity) x \(name)"
+        output += purchased ? " ✔" : " ✘"
+        return output
+    }
+}
+
+struct Animal {
+    let species: String
+    
+    //failable init
+    init?(species: String) {
+        if species.isEmpty { return nil }
+        self.species = species
+    }
+}
+
+enum TemperatureUnit:String {
+    case kelvin, celsius, fahrenheit
+    
+    init?(symbol: Character) {
+        switch symbol {
+        case "K":
+            self = .kelvin
+        case "C":
+            self = .celsius
+        case "F":
+            self = .fahrenheit
+        default:
+            return nil
+        }
+    }
+}
+
+
+class Product {
+    let name: String
+    init?(name: String) {
+        if name.isEmpty { return nil }
+        self.name = name
+    }
+    init(){
+        self.name = "default"
+    }
+}
+
+class CartItem: Product {
+    let quantity: Int
+    init?(name: String, quantity: Int) {
+        if quantity < 1 { return nil }
+        self.quantity = quantity
+        super.init(name: name)
+    }
+    
+}
+
+class CartItem2: Product{
+    override init(name: String) {
+        super.init()
+    }
+}
 

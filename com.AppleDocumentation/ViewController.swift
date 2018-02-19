@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         print("VDL")
-        initDemo8()
+        initDemo10()
     }
 
 
@@ -158,8 +158,92 @@ extension Initialization{
         
         print("temp \(temp.quantity) \(temp.name) ")
         print("temp2 \(temp2.quantity) \(temp2.name) ")
+        
+        //(simple) Food convenience init travels to Food designated init and back
+        let temp4 = Food()
+        print("temp4 name: \(temp4.name)")
+        
+        // ShoppingListItems always start off with purchased = false
+        // ShoppingListItems defines no designated inits and provides a default value for all of its properties so it inherits all designated and convenience inits from superclass
+        let temp5 = ShoppingListItem(name: "shop5", quantity: 15)
+        let temp6 = ShoppingListItem()
+        let temp7 = ShoppingListItem(name: "shop7")
+        
+        print(temp5.description) //using RecipeIngredient designated init
+        print(temp6.description) //using Food convenience init
+        print(temp7.description) //using RecipeIngredient convenience init
+
     }
     
+    //Failable Initializers
+    //to write an init that may fail, place a question mark after the init keyword
+    //note: you may not declare a failable and nonfailable init with same parameter list
+    //failable init returns an optional
+    func initDemo9(){
+        if let temp = Animal(species: ""){
+            print(temp.species)
+        }else{
+            //temp == nil
+            print("failed init")
+        }
+        
+        guard let temp2 = Animal(species: "bear") else {return}
+        print("init succeeded: \(temp2.species)")
+    }
     
+    //Failable Initializers for Enumerations
+    //Failable inits may be used with enums to select appropriate input for given input
     
+    func initDemo10(){
+        guard let temp = TemperatureUnit(symbol: "K") else {return}
+        guard let temp2 = TemperatureUnit(symbol: "F") else {return}
+        guard let temp3 = TemperatureUnit(symbol: "C") else {return}
+        var temp5: [TemperatureUnit] = [temp, temp2, temp3]
+        
+        if let temp4 = TemperatureUnit(symbol: "L") {
+            print("L is not defined so this will fail to append")
+            temp5.append(temp4)
+        }else{ print("this will print because it failed") }
+        print("temp5 print:")
+        temp5.forEach{ print($0.rawValue) }
+
+        
+        //Failable Initializers for Enumerations with Raw Values
+        //raw-value enums AUTOMATICALLY receive a failable initializer: init?(rawValue: )
+
+        guard let temp6 = TemperatureUnit(rawValue: "kelvin") else {return}
+        guard let temp7 = TemperatureUnit(rawValue: "fahrenheit") else {return}
+        guard let temp8 = TemperatureUnit(rawValue: "celsius") else {return}
+
+        let temp9 = [temp6, temp7, temp8]
+        print("temp9 print:")
+        temp9.forEach{
+            print($0.rawValue)
+        }
+        
+    }
+    
+
+    //Propagation of Initialization Failure
+    func initDemo11(){
+        //init will fail if quantity is less than 1
+        if let _ = CartItem(name: "anything", quantity: 0){
+            print("this will not print")
+        }else{
+            print("quantity < 1 so the entire initialization process fails immediately @ CartItem")
+        }
+        guard let _ = CartItem(name: "", quantity: 20) else {
+            print("This passes the quantity < 1 check but will fail at Product init because of empty string")
+            return
+        }
+        
+    }
+    
+    //Overriding a Failable Initializer
+    //Note: you can override a failable with non-failable but not the other was around.
+    
+    func initDemo12(){
+        //CartItem2's init?(name:) method overrides init?(name:) and is now non-failable
+        _ = CartItem2(name: "does not matter")
+    }
 }
