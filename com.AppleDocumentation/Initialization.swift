@@ -236,7 +236,6 @@ class SomeChildClass: SomeClass{
     }
 }
 
-
 struct Chessboard {
     let boardColors: [Bool] = {
         var temporaryBoard = [Bool]()
