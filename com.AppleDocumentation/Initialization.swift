@@ -39,8 +39,33 @@ class InitClass{
 
 }
 
+class InitClassChild: InitClass{
+    init(){
+        super.init(temperature: 22)
+    }
+    convenience init(convenience: Int) {
+        self.init()
+        self.name = "convenient name \(convenience)"
+    }
+}
+
+class InitClassChild2: InitClassChild{
+    override init() {
+        super.init()
+        self.name = "overriden name"
+    }
+}
+
 class InitClassDefault{
-    var temperature = 32.1
+    var temperature = 32.9
+}
+
+class InitClassDefaultChild: InitClassDefault{
+    
+}
+
+class InitClassDefaultChild2: InitClassDefault{
+    var celsius = 9000.1
 }
 
 struct InitStruct{
@@ -82,6 +107,7 @@ struct Size {
     init(custom num: Double){
         self.init(width: num, height: num/2)
     }
+    
 }
 
 struct Rect{
@@ -91,6 +117,29 @@ struct Rect{
 extension Rect{
     init(onlySize: Size){
         self.init(size: onlySize, type: "custom")
+    }
+}
+
+
+class Food {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+    convenience init() {
+        self.init(name: "[Unnamed]")
+    }
+}
+
+class RecipeIngredient: Food {
+    var quantity: Int
+    init(name: String, quantity: Int) {
+        self.quantity = quantity
+        super.init(name: name)
+//        self.name = "LOL"
+    }
+    override convenience init(name: String) {
+        self.init(name: name, quantity: 1)
     }
 }
 
