@@ -209,3 +209,48 @@ class CartItem2: Product{
     }
 }
 
+class CartItem3: Product{
+    override init(name: String) {
+        super.init(name: "name: \(name)")!
+    }
+}
+
+class SomeClass {
+    //NOTE: if you use a closure to initialize a property, the rest of the instance has not yet been initiailized so that means you cannot access those properties from within your closure
+
+    
+    let someProperty: String = {
+        // create a default value for someProperty inside this closure
+        // someValue must be of the same type as SomeType
+        let someValue = "some default value for someProperty"
+        
+        return someValue
+    }()
+    
+    required init() {
+        // initializer implementation goes here
+    }
+}
+class SomeChildClass: SomeClass{
+    required init(){
+    }
+}
+
+
+struct Chessboard {
+    let boardColors: [Bool] = {
+        var temporaryBoard = [Bool]()
+        var isBlack = false
+        for i in 1...8 {
+            for j in 1...8 {
+                temporaryBoard.append(isBlack)
+                isBlack = !isBlack
+            }
+            isBlack = !isBlack
+        }
+        return temporaryBoard
+    }()
+    func squareIsBlackAt(row: Int, column: Int) -> Bool {
+        return boardColors[(row * 8) + column]
+    }
+}

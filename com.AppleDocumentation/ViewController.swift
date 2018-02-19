@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         print("VDL")
-        initDemo10()
+        initDemo14()
     }
 
 
@@ -245,5 +245,34 @@ extension Initialization{
     func initDemo12(){
         //CartItem2's init?(name:) method overrides init?(name:) and is now non-failable
         _ = CartItem2(name: "does not matter")
+        
+        //you can force unwrap your init so that it should always succeed.
+        _ = CartItem3(name: "Bread")
     }
+    
+    //Required Initializers
+    
+    func initDemo13(){
+        //required keyword indicates that all subclasses must implement this initializer.
+        //you do not write override on a required designated initalizer
+        _ = SomeClass()
+        _ = SomeChildClass()
+        
+    }
+    
+    //Setting a Default Property Value with a Closure or Function
+    func initDemo14(){
+        //if a stored value's default property requires customization, you can use a closure or global function. these closures create a temporary value of the same type as property
+        
+        let temp = SomeClass()
+        print(temp.someProperty)
+        
+        
+        //Chessboard's boardColors property is set during initialization and may be accessed through it's squareIsBlackAt(row: column:) utility function
+        let temp2 = Chessboard()
+        print(temp2.squareIsBlackAt(row: 2, column: 1))
+        print(temp2.squareIsBlackAt(row: 2, column: 2))
+
+    }
+    
 }
