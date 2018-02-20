@@ -18,6 +18,8 @@
 		84718D1D203B3EAF00FD082E /* VC+Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84718D1C203B3EAF00FD082E /* VC+Initialization.swift */; };
 		84718D20203B3F0B00FD082E /* VC+Deinitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84718D1F203B3F0B00FD082E /* VC+Deinitialization.swift */; };
 		84718D22203B406600FD082E /* Deinitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84718D21203B406600FD082E /* Deinitialization.swift */; };
+		84718D24203BB7D400FD082E /* VC+OptionalChaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84718D23203BB7D400FD082E /* VC+OptionalChaining.swift */; };
+		84718D26203BB80100FD082E /* OptionalChaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84718D25203BB80100FD082E /* OptionalChaining.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		84718D1C203B3EAF00FD082E /* VC+Initialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Initialization.swift"; sourceTree = "<group>"; };
 		84718D1F203B3F0B00FD082E /* VC+Deinitialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+Deinitialization.swift"; sourceTree = "<group>"; };
 		84718D21203B406600FD082E /* Deinitialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deinitialization.swift; sourceTree = "<group>"; };
+		84718D23203BB7D400FD082E /* VC+OptionalChaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC+OptionalChaining.swift"; sourceTree = "<group>"; };
+		84718D25203BB80100FD082E /* OptionalChaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalChaining.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,13 +94,12 @@
 				84718CF72038B21F00FD082E /* AppDelegate.swift */,
 				84718CF92038B21F00FD082E /* ViewController.swift */,
 				84718CFB2038B21F00FD082E /* Main.storyboard */,
+				84718D29203BB83D00FD082E /* Models */,
+				84718D1E203B3ED400FD082E /* VC+Extensions */,
 				84718D012038B21F00FD082E /* Assets.xcassets */,
 				84718D032038B21F00FD082E /* LaunchScreen.storyboard */,
 				84718D062038B21F00FD082E /* Info.plist */,
 				84718CFE2038B21F00FD082E /* com_AppleDocumentation.xcdatamodeld */,
-				84718D21203B406600FD082E /* Deinitialization.swift */,
-				84718D1A2038B2F500FD082E /* Initialization.swift */,
-				84718D1E203B3ED400FD082E /* VC+Extensions */,
 			);
 			path = com.AppleDocumentation;
 			sourceTree = "<group>";
@@ -115,8 +118,19 @@
 			children = (
 				84718D1C203B3EAF00FD082E /* VC+Initialization.swift */,
 				84718D1F203B3F0B00FD082E /* VC+Deinitialization.swift */,
+				84718D23203BB7D400FD082E /* VC+OptionalChaining.swift */,
 			);
 			path = "VC+Extensions";
+			sourceTree = "<group>";
+		};
+		84718D29203BB83D00FD082E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84718D25203BB80100FD082E /* OptionalChaining.swift */,
+				84718D21203B406600FD082E /* Deinitialization.swift */,
+				84718D1A2038B2F500FD082E /* Initialization.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +243,8 @@
 				84718D1B2038B2F500FD082E /* Initialization.swift in Sources */,
 				84718D22203B406600FD082E /* Deinitialization.swift in Sources */,
 				84718D20203B3F0B00FD082E /* VC+Deinitialization.swift in Sources */,
+				84718D26203BB80100FD082E /* OptionalChaining.swift in Sources */,
+				84718D24203BB7D400FD082E /* VC+OptionalChaining.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
